@@ -41,11 +41,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.get("/")
 def index():
     return RedirectResponse("/home")
-
 
 @app.websocket('/mailbox')
 async def websocket(websocket: WebSocket):
